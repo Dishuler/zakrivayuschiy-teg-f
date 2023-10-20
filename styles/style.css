@@ -199,7 +199,6 @@
 
 @supports ((text-stroke: 0.5px #fff) or (-webkit-text-stroke: #fff)) {
   .card__label {
-    text-stroke: 0.5px var(--color-bg);
     -webkit-text-stroke: 0.5px var(--color-bg);
     text-stroke: 0.5px var(--color-bg);
     text-shadow: none;
