@@ -1,3 +1,9 @@
+<!---v1.1 иправлены замечания ревьювера
+1. Переделана структура заголовков, добавлена ссылка (строка 32-33).
+2. Переделана структура заголовков, замена на h2 (card__title).
+3. Добавлен атрибут type кнопкам(card__icon-button, card__like-button).
+4. Добавлена обертка (form) для кнопки внутри dialog, добавлен method="dialog" и удален атрибут onclick (строка 380-382)
+--->
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -17,16 +23,14 @@
 	<link rel="stylesheet" href="./styles/style.css" />
 	<link rel="stylesheet" href="./styles/animations.css" />
 	<link rel="stylesheet" href="./styles/themes.css" />
-
-	<script src="./scripts/set-theme.js"></script>
 </head>
 
 <body class="page">
 
 	<header class="header">
 		<div class="header__content">
-			<h1 class="header__title">&lt;/HTML&gt;</h1>
-			<h2 class="header__subtitle">закрывающий тег</h2>
+			<a class="header__logo">&lt;/HTML&gt;</a>
+			<h1 class="header__title">закрывающий тег</h1>
 		</div>
 		<nav class="theme-menu header__theme-menu">
 			<!-- Не меняйте разметку этого списка, иначе скрипты перестанут работать -->
@@ -55,9 +59,9 @@
 			<ul class="gallery__list">
 				<li class="gallery__item">
 					<article class="gallery__card card">
-						<h3 class="card__title">Фритрек и нулевой спринт: Подготовка к работе</h3>
+						<h2 class="card__title">Фритрек и нулевой спринт: Подготовка к работе</h2>
 						<div class="card__image-content">
-							<p class="card__label" aria-hidden="true">&lt;/HTML&gt;</p>
+							<span class="card__label" aria-hidden="true">&lt;/HTML&gt;</span>
 							<img src="images/car.jpg"
 								alt="Пиксельный минивэн, стоящий ночью под деревом в стиле ретро вейв / Pixel minivan standing under a tree at night in retro wave style"
 								class="card__image">
@@ -69,12 +73,12 @@
 							<p class="card__additional-text" aria-hidden="true">Место для ваших воспоминаний о начале обучения.
 							</p>
 							<div class="card__buttons">
-								<button class="card__icon-button">
+								<button class="card__icon-button" type="button">
 									<svg class="like-icon" xmlns="http://www.w3.org/2000/svg" width="39" height="36" fill="none"
 										aria-label="like">
 										<g class="heart">
 											<path class="contour" fill="var(--contour-color)"
-												d="M12 6H9v3h3V6Zm3 0h-3v3h3V6ZM9 9H6v3h3V9Zm0 3H6v3h3v-3Zm0 3H6v3h3v-3Zm9-9h-3v3h3V6Zm-6 12H9v3h3v-3Zm3 3h-3v3h3v-3Zm3 3h-3v3h3v-3Zm9-18h3v3h-3V6Zm-3 0h3v3h-3V6Zm6 3h3v3h-3V9Zm0 3h3v3h-3v-3Zm0 3h3v3h-3v-3Zm-9-9h3v3h-3V6Zm6 12h3v3h-3v-3Zm-3 3h3v3h-3v-3Zm-3 3h3v3h-3v-3Zm0 3h-3v3h3v-3Zm0-18h-3v3h3V9Z" />
+												d="M12 6H9v3h2V6Zm3 0h-3v3h3V6ZM9 9H6v3h3V9Zm0 3H6v3h3v-3Zm0 3H6v3h3v-3Zm9-9h-3v3h3V6Zm-6 12H9v3h3v-3Zm3 3h-3v3h3v-3Zm3 3h-3v3h3v-3Zm9-18h3v3h-3V6Zm-3 0h3v3h-3V6Zm6 3h3v3h-3V9Zm0 3h3v3h-3v-3Zm0 3h3v3h-3v-3Zm-9-9h3v3h-3V6Zm6 12h3v3h-3v-3Zm-3 3h3v3h-3v-3Zm-3 3h3v3h-3v-3Zm0 3h-3v3h3v-3Zm0-18h-3v3h3V9Z" />
 											<path class="main-body" fill="transparent"
 												d="M12 9H9v3h3V9Zm3 3h-3v3h3v-3Zm3-3h-3v3h3V9Zm-6 6H9v3h3v-3Zm3 0h-3v3h3v-3Zm0 3h-3v3h3v-3Zm3-6h-3v3h3v-3Zm0 9h-3v3h3v-3Zm0-3h-3v3h3v-3Zm9-9h3v3h-3V9Zm-3 0h3v3h-3V9Zm3 3h3v3h-3v-3Zm-3 0h3v3h-3v-3Zm-3-3h3v3h-3V9Zm6 6h3v3h-3v-3Zm-3 0h3v3h-3v-3Zm0 3h3v3h-3v-3Zm-3-6h3v3h-3v-3Zm0 9h3v3h-3v-3Zm0-3h3v3h-3v-3Zm0 3h-3v3h3v-3Zm0 3h-3v3h3v-3Z" />
 											<path class="core" fill="transparent"
@@ -83,7 +87,7 @@
 										<path class="sparks" fill="var(--fill-color)"
 											d="M36 13h3v3h-3v-3Zm-9 14h3v3h-3v-3Zm-9 6h3v3h-3v-3Zm-9-6h3v3H9v-3ZM24 0h3v3h-3V0Zm9 3h3v3h-3V3ZM3 3h3v3H3V3Zm9-3h3v3h-3V0ZM0 13h3v3H0v-3Z" />
 									</svg></button>
-								<button class="card__like-button button">
+								<button class="card__like-button button" type="button">
 									<span class="button__text">like</span>
 								</button>
 							</div>
@@ -92,9 +96,9 @@
 				</li>
 				<li class="gallery__item">
 					<article class="gallery__card card">
-						<h3 class="card__title">1 спринт: Я — чистый лист</h3>
+						<h2 class="card__title">1 спринт: Я — чистый лист</h2>
 						<div class="card__image-content">
-							<p class="card__label" aria-hidden="true">&lt;/HTML&gt;</p>
+							<span class="card__label" aria-hidden="true">&lt;/HTML&gt;</span>
 							<img src="images/car.jpg"
 								alt="Пиксельный минивэн, стоящий ночью под деревом в стиле ретро вейв / Pixel minivan standing under a tree at night in retro wave style"
 								class="card__image">
@@ -107,7 +111,7 @@
 							<p class="card__additional-text" aria-hidden="true">Место для ваших воспоминаний о начале первого
 								спринта.</p>
 							<div class="card__buttons">
-								<button class="card__icon-button">
+								<button class="card__icon-button" type="button">
 									<svg class="like-icon" xmlns="http://www.w3.org/2000/svg" width="39" height="36" fill="none"
 										aria-label="like">
 										<g class="heart">
@@ -121,7 +125,7 @@
 										<path class="sparks" fill="var(--fill-color)"
 											d="M36 13h3v3h-3v-3Zm-9 14h3v3h-3v-3Zm-9 6h3v3h-3v-3Zm-9-6h3v3H9v-3ZM24 0h3v3h-3V0Zm9 3h3v3h-3V3ZM3 3h3v3H3V3Zm9-3h3v3h-3V0ZM0 13h3v3H0v-3Z" />
 									</svg></button>
-								<button class="card__like-button button">
+								<button class="card__like-button button" type="button">
 									<span class="button__text">like</span>
 								</button>
 							</div>
@@ -130,9 +134,9 @@
 				</li>
 				<li class="gallery__item">
 					<article class="gallery__card card">
-						<h3 class="card__title">1 спринт: А если не получится?</h3>
+						<h2 class="card__title">1 спринт: А если не получится?</h2>
 						<div class="card__image-content">
-							<p class="card__label">&lt;CSS&gt;</p>
+							<span class="card__label">&lt;CSS&gt;</span>
 							<img src="images/car.jpg"
 								alt="Пиксельный минивэн, стоящий ночью под деревом в стиле ретро вейв / Pixel minivan standing under a tree at night in retro wave style"
 								class="card__image">
@@ -143,7 +147,7 @@
 								поверить в себя.</p>
 							<p class="card__additional-text">Место для ваших воспоминаний об окончании первого спринта.</p>
 							<div class="card__buttons">
-								<button class="card__icon-button">
+								<button class="card__icon-button" type="button">
 									<svg class="like-icon" xmlns="http://www.w3.org/2000/svg" width="39" height="36" fill="none"
 										aria-label="like">
 										<g class="heart">
@@ -157,7 +161,7 @@
 										<path class="sparks" fill="var(--fill-color)"
 											d="M36 13h3v3h-3v-3Zm-9 14h3v3h-3v-3Zm-9 6h3v3h-3v-3Zm-9-6h3v3H9v-3ZM24 0h3v3h-3V0Zm9 3h3v3h-3V3ZM3 3h3v3H3V3Zm9-3h3v3h-3V0ZM0 13h3v3H0v-3Z" />
 									</svg></button>
-								<button class="card__like-button button">
+								<button class="card__like-button button" type="button">
 									<span class="button__text">like</span>
 								</button>
 							</div>
@@ -166,9 +170,9 @@
 				</li>
 				<li class="gallery__item">
 					<article class="gallery__card card">
-						<h3 class="card__title">2 спринт: Погоня за идеалом</h3>
+						<h2 class="card__title">2 спринт: Погоня за идеалом</h2>
 						<div class="card__image-content">
-							<p class="card__label" aria-hidden="true">&lt;desigions&gt;</p>
+							<span class="card__label" aria-hidden="true">&lt;desigions&gt;</span>
 							<img src="images/car.jpg"
 								alt="Пиксельный минивэн, стоящий ночью под деревом в стиле ретро вейв / Pixel minivan standing under a tree at night in retro wave style"
 								class="card__image">
@@ -181,7 +185,7 @@
 							<p class="card__additional-text" aria-hidden="true">Место для ваших воспоминаний о начале второго
 								спринта.</p>
 							<div class="card__buttons">
-								<button class="card__icon-button">
+								<button class="card__icon-button" type="button">
 									<svg class="like-icon" xmlns="http://www.w3.org/2000/svg" width="39" height="36" fill="none"
 										aria-label="like">
 										<g class="heart">
@@ -195,7 +199,7 @@
 										<path class="sparks" fill="var(--fill-color)"
 											d="M36 13h3v3h-3v-3Zm-9 14h3v3h-3v-3Zm-9 6h3v3h-3v-3Zm-9-6h3v3H9v-3ZM24 0h3v3h-3V0Zm9 3h3v3h-3V3ZM3 3h3v3H3V3Zm9-3h3v3h-3V0ZM0 13h3v3H0v-3Z" />
 									</svg></button>
-								<button class="card__like-button button">
+								<button class="card__like-button button" type="button">
 									<span class="button__text">like</span>
 								</button>
 							</div>
@@ -204,9 +208,9 @@
 				</li>
 				<li class="gallery__item">
 					<article class="gallery__card card">
-						<h3 class="card__title">2 спринт: О тех, кто рядом</h3>
+						<h2 class="card__title">2 спринт: О тех, кто рядом</h2>
 						<div class="card__image-content">
-							<p class="card__label" aria-hidden="true">care</p>
+							<span class="card__label" aria-hidden="true">care</span>
 							<img src="images/car.jpg"
 								alt="Пиксельный минивэн, стоящий ночью под деревом в стиле ретро вейв / Pixel minivan standing under a tree at night in retro wave style"
 								class="card__image">
@@ -219,7 +223,7 @@
 							<p class="card__additional-text" aria-hidden="true">Место для ваших воспоминаний об окончании
 								второго спринта.</p>
 							<div class="card__buttons">
-								<button class="card__icon-button">
+								<button class="card__icon-button" type="button">
 									<svg class="like-icon" xmlns="http://www.w3.org/2000/svg" width="39" height="36" fill="none"
 										aria-label="like">
 										<g class="heart">
@@ -233,7 +237,7 @@
 										<path class="sparks" fill="var(--fill-color)"
 											d="M36 13h3v3h-3v-3Zm-9 14h3v3h-3v-3Zm-9 6h3v3h-3v-3Zm-9-6h3v3H9v-3ZM24 0h3v3h-3V0Zm9 3h3v3h-3V3ZM3 3h3v3H3V3Zm9-3h3v3h-3V0ZM0 13h3v3H0v-3Z" />
 									</svg></button>
-								<button class="card__like-button button">
+								<button class="card__like-button button" type="button">
 									<span class="button__text">like</span>
 								</button>
 							</div>
@@ -242,9 +246,9 @@
 				</li>
 				<li class="gallery__item">
 					<article class="gallery__card card">
-						<h3 class="card__title">3 спринт: Обходные стратегии</h3>
+						<h2 class="card__title">3 спринт: Обходные стратегии</h2>
 						<div class="card__image-content">
-							<p class="card__label" aria-hidden="true">&lt;/support&gt;</p>
+							<span class="card__label" aria-hidden="true">&lt;/support&gt;</span>
 							<img src="images/car.jpg"
 								alt="Пиксельный минивэн, стоящий ночью под деревом в стиле ретро вейв / Pixel minivan standing under a tree at night in retro wave style"
 								class="card__image">
@@ -256,7 +260,7 @@
 							<p class="card__additional-text" aria-hidden="true">Место для ваших воспоминаний о начале третьего
 								спринта.</p>
 							<div class="card__buttons">
-								<button class="card__icon-button">
+								<button class="card__icon-button" type="button">
 									<svg class="like-icon" xmlns="http://www.w3.org/2000/svg" width="39" height="36" fill="none"
 										aria-label="like">
 										<g class="heart">
@@ -270,7 +274,7 @@
 										<path class="sparks" fill="var(--fill-color)"
 											d="M36 13h3v3h-3v-3Zm-9 14h3v3h-3v-3Zm-9 6h3v3h-3v-3Zm-9-6h3v3H9v-3ZM24 0h3v3h-3V0Zm9 3h3v3h-3V3ZM3 3h3v3H3V3Zm9-3h3v3h-3V0ZM0 13h3v3H0v-3Z" />
 									</svg></button>
-								<button class="card__like-button button">
+								<button class="card__like-button button" type="button">
 									<span class="button__text">like</span>
 								</button>
 							</div>
@@ -279,9 +283,9 @@
 				</li>
 				<li class="gallery__item">
 					<article class="gallery__card card">
-						<h3 class="card__title">3 спринт: Когда опускаются руки</h3>
+						<h2 class="card__title">3 спринт: Когда опускаются руки</h2>
 						<div class="card__image-content">
-							<p class="card__label" aria-hidden="true">&lt;lifes-style: none;&gt;</p>
+							<span class="card__label" aria-hidden="true">&lt;lifes-style: none;&gt;</span>
 							<img src="images/car.jpg"
 								alt="Пиксельный минивэн, стоящий ночью под деревом в стиле ретро вейв / Pixel minivan standing under a tree at night in retro wave style"
 								class="card__image">
@@ -294,7 +298,7 @@
 							<p class="card__additional-text" aria-hidden="true">Место для ваших воспоминаний об окончании
 								третьего спринта.</p>
 							<div class="card__buttons">
-								<button class="card__icon-button">
+								<button class="card__icon-button" type="button">
 									<svg class="like-icon" xmlns="http://www.w3.org/2000/svg" width="39" height="36" fill="none"
 										aria-label="like">
 										<g class="heart">
@@ -308,7 +312,7 @@
 										<path class="sparks" fill="var(--fill-color)"
 											d="M36 13h3v3h-3v-3Zm-9 14h3v3h-3v-3Zm-9 6h3v3h-3v-3Zm-9-6h3v3H9v-3ZM24 0h3v3h-3V0Zm9 3h3v3h-3V3ZM3 3h3v3H3V3Zm9-3h3v3h-3V0ZM0 13h3v3H0v-3Z" />
 									</svg></button>
-								<button class="card__like-button button">
+								<button class="card__like-button button" type="button">
 									<span class="button__text">like</span>
 								</button>
 							</div>
@@ -317,9 +321,9 @@
 				</li>
 				<li class="gallery__item">
 					<article class="gallery__card card">
-						<h3 class="card__title">«Сейчас я здесь»</h3>
+						<h2 class="card__title">«Сейчас я здесь»</h3>
 						<div class="card__image-content">
-							<p class="card__label" aria-hidden="true">&lt;experience&gt;</p>
+							<span class="card__label" aria-hidden="true">&lt;experience&gt;</span>
 							<img src="images/car.jpg"
 								alt="Пиксельный минивэн, стоящий ночью под деревом в стиле ретро вейв / Pixel minivan standing under a tree at night in retro wave style"
 								class="card__image">
@@ -333,7 +337,7 @@
 							<p class="card__additional-text" aria-hidden="true">Место, чтобы остановиться, подумать и написать,
 								что вы чувствуете в этой точке пути.</p>
 							<div class="card__buttons">
-								<button class="card__icon-button">
+								<button class="card__icon-button" type="button">
 									<svg class="like-icon" xmlns="http://www.w3.org/2000/svg" width="39" height="36" fill="none"
 										aria-label="like">
 										<g class="heart">
@@ -348,7 +352,7 @@
 											d="M36 13h3v3h-3v-3Zm-9 14h3v3h-3v-3Zm-9 6h3v3h-3v-3Zm-9-6h3v3H9v-3ZM24 0h3v3h-3V0Zm9 3h3v3h-3V3ZM3 3h3v3H3V3Zm9-3h3v3h-3V0ZM0 13h3v3H0v-3Z" />
 									</svg>
 								</button>
-								<button class="card__like-button button">
+								<button class="card__like-button button" type="button">
 									<span class="button__text">like</span>
 								</button>
 							</div>
@@ -373,9 +377,12 @@
 			</svg>
 			<span class="dialog__text">Сохранить на память</span>
 		</div>
-		<button class="dialog__button button" type="button" onclick="window['save'].close()">ок</button>
+		<form class="dialog__form" method="dialog">
+			<button class="dialog__button button" type="menu">ок</button>
+		</form>
 	</dialog>
 	<script src="./scripts/like.js"></script>
+	<script src="./scripts/set-theme.js"></script>
 </body>
 
 </html>
